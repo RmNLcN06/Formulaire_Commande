@@ -1,0 +1,19 @@
+legend {
+  text-align: center;
+}
+
+td {
+  padding: 10px 76px;
+}
+
+td.total {
+  padding-left: 5px;
+}
+
+.field {
+  width: 200px;
+}
+
+.mini-field {
+  width: 100px;
+}
