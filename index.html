@@ -13,8 +13,8 @@
 	<h1>Prise de commande</h1>
 	<fieldset>
 		<legend>Panier de votre commande</legend>
-		<form>
-			<table>
+		<table>
+            <form>
 				<tr>
 					<th>Libellé</th>
 					<th>Référence</th>
@@ -24,7 +24,7 @@
 				</tr>
                 <tr>
                     <td>
-                        <select class="livres" name="livres">
+                        <select class="first-livres" name="livres">
                             <option value="choice">*Choisissez votre livre*</option>
                             <option value="grandLivreJavascript">Le grand livre du JavaScript</option>
                             <option value="htmlPlusVite">HTML encore plus vite</option>
@@ -35,21 +35,21 @@
                         </select>
                     </td>
                     <td>
-                        <input class="field reference" type="text">
+                        <input class="field reference" type="text" disabled>
                     </td>
                     <td>
                         <input class="field quantite" type="number" min="1" max="100">
                     </td>
                     <td>
-                        <input class="field prixUnitaire" type="text">
+                        <input class="field prixUnitaire" type="text" disabled>
                     </td>
                     <td>
-                        <input class="field prix" type="text">
+                        <input class="field prix" type="text" disabled>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <select class="livres" name="livres">
+                        <select class="second-livres" name="livres">
                             <option value="choice">*Choisissez votre livre*</option>
                             <option value="grandLivreJavascript">Le grand livre du JavaScript</option>
                             <option value="htmlPlusVite">HTML encore plus vite</option>
@@ -281,8 +281,8 @@
                         <input class="mini-field prix" type="text">
                     </td>
                 </tr>
-			</table>
-		</form>
+            </form>
+		</table>
 	</fieldset>
 	
     <!-- JavaScript File(s)-->
