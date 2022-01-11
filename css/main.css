@@ -1,17 +1,77 @@
+/* Variables CSS */
+:root {
+  --clr-turquoise: #55D6BE; 
+  --clr-medium-spring-green: #26F79D; 
+  --clr-venetian-red: #C80414; 
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
 legend {
   text-align: center;
 }
 
-td {
-  padding: 10px 65px;
+div {
+  float: left;
 }
 
-td.total {
-  padding-left: 5px;
+.column {
+  display: inline-block;
+  /* border: 2px solid black; */
+  width: 300px;
+  height: 675px;
+  margin: 10px 35px;
 }
 
-.field {
-  width: 200px;
+h1, h3 {
+  text-align: center;
+}
+
+select {
+  width: 280px;
+  height: 20px;
+  text-align: center;
+  margin: 20px 10px;
+}
+
+input {
+  height: 18px;
+  margin: 18px 61.5px;
+}
+
+input[disabled] {
+  border-color: var(--clr-venetian-red);
+  transition: 0.5s;
+}
+
+input[disabled]:hover {
+  background-color: lightgray;
+}
+
+input.quantite {
+  border-color: var(--clr-medium-spring-green);
+}
+
+input.quantite, input.prixUnitaire, input.prix {
+  margin-left: 113px;
+  margin-right: 113px;
+}
+
+input.prixUnitaire, input.prix {
+  width: 73px;
+}
+
+.total {
+  clear: both;
+  float: right;
+}
+
+.total p {
+  float: left;
 }
 
 .mini-field {
