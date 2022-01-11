@@ -29,6 +29,7 @@ div {
 
 h1, h3 {
   text-align: center;
+  background-color: var(--clr-turquoise);
 }
 
 select {
@@ -49,7 +50,8 @@ input[disabled] {
 }
 
 input[disabled]:hover {
-  background-color: lightgray;
+  background-color: var(--clr-venetian-red);
+  opacity: 0.3;
 }
 
 input.quantite {
