@@ -44,8 +44,34 @@ input {
   margin: 18px 61.5px;
 }
 
+.tooltip:hover {
+  position: relative;
+}
+
+.tooltipText {
+  visibility: hidden;
+  position: absolute;
+  font-size: 12px;
+}
+
+.tooltip .tooltipText::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 200%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+
+.tooltip:hover .tooltipText {
+  visibility: visible;
+}
+
 input[disabled] {
   border-color: var(--clr-venetian-red);
+  background-color: lightgray;
   transition: 0.5s;
 }
 
