@@ -46,46 +46,103 @@ const books = [
 
 /*********************************************************************************************/
 
-var livres = document.getElementsByClassName("livres")[0];
-var reference = document.getElementsByClassName("reference")[0];
-var quantite = document.getElementsByClassName("quantite")[0];
-var prixUnit = document.getElementsByClassName("prixUnitaire")[0];
-var prix = document.getElementsByClassName("prix")[0];
+var form = document.getElementById("form");
+var select = document.querySelectorAll("select");
+var option = document.querySelectorAll("option");
+var input = document.querySelectorAll("input");
+var inputReference = document.querySelectorAll(".reference");
+var inputQuantite = document.querySelectorAll(".quantite");
+var inputPrixUnitaire = document.querySelectorAll(".prixUnitaire");
+var inputPrix = document.querySelectorAll(".prix");
+console.log(select);
+console.log(option);
+console.log(input);
 
-livres.addEventListener("change", function() {
-  console.log("ael: " + this.name);
-  returnVal(this.name);
-}, false);
 
-function returnVal(sitem){ // selected item = sitem
-  // on passe le nom de la variable (books) en paramètre
-  // c'est donc le nom de la variable mais pas sa valeur
-  // pour passer d'un string à un nom de variable on utilise eval()
-  sitem = eval(sitem);
-  // on cible le noeud des options du select
-  var options = sitem.querySelectorAll("option");
-  console.log(options);
-  // on parcours le noeud pour trouver l'index sélectionné
-  for(var item of options){
-      if(item.selected == true){
-          var i = item.index;
-      }
-  }
-  // console.log('i= '+ i);
-  // console.log("(name= "+ sitem.name +") (value= "+ options[i].value +") (text= "+ options[i].text +")");
-   //var count = options.length;
-  //console.log(count); 
-  //document.getElementsByClassName('reference')[0].value = options[i].value;
-
-  if(livres[i].selected == true) {
-    reference.value = books[i].reference;
-    quantite.value += 1;
-    prixUnit.value = books[i].prixUnit;
-    prix.value = quantite[i].value * prixUnit[i].value; 
-  } else {
-    quantite.value -= 1;
-  }
+for(i = 0; i < select.length ; i++) 
+{
+  select[i].addEventListener("change", choose);
 }
+
+function choose()
+{
+  // if(select[0].option[0].selected == true) 
+  // {
+    for(j = 0 ; j < select.length ; j++) 
+    {
+      for(k = 0 ; k < select[k].options.length ; k++ ) 
+      {
+        for(l = 0 ; l < input[j].length ; l++)
+        console.log(input[j].length);
+        inputReference[j].value = "prout";
+        inputQuantite[j].value = 1;
+        inputPrixUnitaire[j].value = 12.5;
+        inputPrix[j].value = inputQuantite[j].value * inputPrixUnitaire[j].value;
+      }
+    // }
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*************************************************************************************************/
+// var livres = document.getElementsByClassName("livres")[0];
+// var reference = document.getElementsByClassName("reference")[0];
+// var quantite = document.getElementsByClassName("quantite")[0];
+// var prixUnit = document.getElementsByClassName("prixUnitaire")[0];
+// var prix = document.getElementsByClassName("prix")[0];
+
+// livres.addEventListener("change", function() {
+//   console.log("ael: " + this.name);
+//   returnVal(this.name);
+// }, false);
+
+// function returnVal(sitem){ // selected item = sitem
+//   // on passe le nom de la variable (books) en paramètre
+//   // c'est donc le nom de la variable mais pas sa valeur
+//   // pour passer d'un string à un nom de variable on utilise eval()
+//   sitem = eval(sitem);
+//   // on cible le noeud des options du select
+//   var options = sitem.querySelectorAll("option");
+//   console.log(options);
+//   // on parcours le noeud pour trouver l'index sélectionné
+//   for(var item of options){
+//       if(item.selected == true){
+//           var i = item.index;
+//       }
+//   }
+//   // console.log('i= '+ i);
+//   // console.log("(name= "+ sitem.name +") (value= "+ options[i].value +") (text= "+ options[i].text +")");
+//    //var count = options.length;
+//   //console.log(count); 
+//   //document.getElementsByClassName('reference')[0].value = options[i].value;
+
+//   if(livres[i].selected == true) {
+//     reference.value = books[i].reference;
+//     quantite.value += 1;
+//     prixUnit.value = books[i].prixUnit;
+//     prix.value = quantite[i].value * prixUnit[i].value; 
+//   } else {
+//     quantite.value -= 1;
+//   }
+// }
 
 
 
