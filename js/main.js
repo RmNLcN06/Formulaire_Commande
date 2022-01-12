@@ -70,13 +70,14 @@ function choose()
   {
     for(k = 0 ; k < select[j].options.length ; k++ ) 
     {
-      for(l = 0 ; l < 1 ; l++) 
-      {
-        inputReference[l].value = "prout";
-        inputQuantite[l].value = 1;
-        inputPrixUnitaire[l].value = 12.5;
-        inputPrix[l].value = inputQuantite[l].value * inputPrixUnitaire[l].value;
-      }
+      if(select[j].options[k].selected == true && k != 0) {
+        {
+          inputReference[j].value = "prout";
+          inputQuantite[j].value = 2;
+          inputPrixUnitaire[j].value = 12.5;
+          inputPrix[j].value = inputQuantite[j].value * inputPrixUnitaire[j].value;
+        }
+      }  
     }
   }
 };
