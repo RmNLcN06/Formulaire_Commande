@@ -39,10 +39,10 @@ const books = [
  ];
 
 // Pour accéder au tableau "livres" puis à l'index[1] "htmlPlusVite" et enfin à la valeur de l'index[0] "titre" :
-//console.log(livres[1].titre); Résultat obtenu : HTML encore plus vite
+//console.log(books[1].titre); Résultat obtenu : HTML encore plus vite
 
 // Pour accéder au tableau "livres" puis à l'index[4] "formationJava" et enfin à la valeur de l'index[2] "prixUnit" :
-//console.log(livres[4].prixUnit); Résultat obtenu : 42
+//console.log(books[4].prixUnit); Résultat obtenu : 42
 
 /*********************************************************************************************/
 
@@ -54,9 +54,11 @@ var inputReference = document.querySelectorAll(".reference");
 var inputQuantite = document.querySelectorAll(".quantite");
 var inputPrixUnitaire = document.querySelectorAll(".prixUnitaire");
 var inputPrix = document.querySelectorAll(".prix");
-console.log(select);
-console.log(option);
-console.log(input);
+var resultat = document.querySelector(".resultat");
+// console.log(select);
+// console.log(option);
+// console.log(input);
+
 
 
 for(i = 0; i < select.length ; i++) 
@@ -71,18 +73,48 @@ function choose()
     for(k = 0 ; k < select[j].options.length ; k++ ) 
     {
       if(select[j].options[k].selected == true && k != 0) {
-        {
           inputReference[j].value = "prout";
-          inputQuantite[j].value = 2;
+          inputQuantite[j].value = 1;
           inputPrixUnitaire[j].value = 12.5;
           inputPrix[j].value = inputQuantite[j].value * inputPrixUnitaire[j].value;
-        }
-      }  
+      } 
+      else if(select[j].options[k].selected == true && k == 0) 
+      {
+          inputReference[j].value = "";
+          inputQuantite[j].value = "";
+          inputPrixUnitaire[j].value = "";
+          inputPrix[j].value = "";
+      }
     }
   }
 };
 
 
+function sommeTotal() {
+  for(i = 0 ; i < inputPrix.length ; i++) {
+    resultat += inputPrix.value; 
+  }
+  resultat.value = parseInt(resultat);
+};
+
+// fonction Addition 
+// const array = [1, 2, 3, 4];
+// var sum = 0;
+
+// for (i = 0; i < array.length; i++) {
+//     sum += array[i];
+// }
+// console.log(sum);
+
+
+// fonction Multiplication
+// const array = [1, 2, 3, 4];
+// var mul = 0;
+
+// for (i = 0; i < array.length ; i++) {
+//     mul *= array[i];
+// }
+// console.log(mul)
 
 
 
