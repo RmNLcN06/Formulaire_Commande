@@ -66,20 +66,18 @@ for(i = 0; i < select.length ; i++)
 
 function choose()
 {
-  // if(select[0].option[0].selected == true) 
-  // {
-    for(j = 0 ; j < select.length ; j++) 
+  for(j = 0 ; j < select.length ; j++) 
+  {
+    for(k = 0 ; k < select[j].options.length ; k++ ) 
     {
-      for(k = 0 ; k < select[k].options.length ; k++ ) 
+      for(l = 0 ; l < 1 ; l++) 
       {
-        for(l = 0 ; l < input[j].length ; l++)
-        console.log(input[j].length);
-        inputReference[j].value = "prout";
-        inputQuantite[j].value = 1;
-        inputPrixUnitaire[j].value = 12.5;
-        inputPrix[j].value = inputQuantite[j].value * inputPrixUnitaire[j].value;
+        inputReference[l].value = "prout";
+        inputQuantite[l].value = 1;
+        inputPrixUnitaire[l].value = 12.5;
+        inputPrix[l].value = inputQuantite[l].value * inputPrixUnitaire[l].value;
       }
-    // }
+    }
   }
 };
 
