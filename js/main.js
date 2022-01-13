@@ -9,6 +9,7 @@ const books = [
   (grandLivreJavascript = {
     titre: "Le grand livre du JavaScript",
     reference: "IB454681",
+    quantite: 1,
     prixUnit: 25,
   }),
   (htmlPlusVite = {
@@ -73,9 +74,9 @@ function choose()
     for(k = 0 ; k < select[j].options.length ; k++ ) 
     {
       if(select[j].options[k].selected == true && k != 0) {
-          inputReference[j].value = "prout";
-          inputQuantite[j].value = 1;
-          inputPrixUnitaire[j].value = 12.5;
+          inputReference[j].value = books[0].reference;
+          inputQuantite[j].value = books[0].quantite;
+          inputPrixUnitaire[j].value = books[0].prixUnit;
           inputPrix[j].value = inputQuantite[j].value * inputPrixUnitaire[j].value;
       } 
       else if(select[j].options[k].selected == true && k == 0) 
