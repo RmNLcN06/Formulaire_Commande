@@ -6,6 +6,12 @@
                  "Le grand livre du JavaScript".
 */
 const books = [
+  (choixLivre = {
+    titre: "",
+    reference: "",
+    quantite: "",
+    prixUnit: "",
+  }),
   (grandLivreJavascript = {
     titre: "Le grand livre du JavaScript",
     reference: "IB454681",
@@ -15,26 +21,31 @@ const books = [
   (htmlPlusVite = {
     titre: "HTML encore plus vite",
     reference: "IB454668",
+    quantite: 1,
     prixUnit: 35,
   }),
   (windowsNT = {
     titre: "Windows NT 4.0",
     reference: "IB454688",
+    quantite: 1,
     prixUnit: 15,
   }),
   (kitRessource = {
     titre: "Le Kit de Ressource technique de NT",
     reference: "IB454622",
+    quantite: 1,
     prixUnit: 32,
   }),
   (formationJava = {
     titre: "Formation Java",
     reference: "IB454688",
+    quantite: 1,
     prixUnit: 42,
   }),
   (creerSiteWeb = {
     titre: "Comment créer son site Web",
     reference: "IB454673",
+    quantite: 1,
     prixUnit: 31,
   }),
  ];
@@ -55,7 +66,7 @@ var inputReference = document.querySelectorAll(".reference");
 var inputQuantite = document.querySelectorAll(".quantite");
 var inputPrixUnitaire = document.querySelectorAll(".prixUnitaire");
 var inputPrix = document.querySelectorAll(".prix");
-var resultat = document.querySelector(".resultat");
+var total = document.getElementsByClassName("resultat")[0];
 // console.log(select);
 // console.log(option);
 // console.log(input);
@@ -65,6 +76,7 @@ var resultat = document.querySelector(".resultat");
 for(i = 0; i < select.length ; i++) 
 {
   select[i].addEventListener("change", choose);
+  select[i].addEventListener("change", sommeTotal);
 }
 
 function choose()
@@ -74,9 +86,9 @@ function choose()
     for(k = 0 ; k < select[j].options.length ; k++ ) 
     {
       if(select[j].options[k].selected == true && k != 0) {
-          inputReference[j].value = books[0].reference;
-          inputQuantite[j].value = books[0].quantite;
-          inputPrixUnitaire[j].value = books[0].prixUnit;
+          inputReference[j].value = books[k].reference;
+          inputQuantite[j].value = books[k].quantite;
+          inputPrixUnitaire[j].value = books[k].prixUnit;
           inputPrix[j].value = inputQuantite[j].value * inputPrixUnitaire[j].value;
       } 
       else if(select[j].options[k].selected == true && k == 0) 
@@ -92,17 +104,29 @@ function choose()
 
 
 function sommeTotal() {
+  var resultat = 0;
+
   for(i = 0 ; i < inputPrix.length ; i++) {
-    resultat += inputPrix.value; 
+    resultat = parseInt(resultat) + parseInt(inputPrix[i].value);
+    console.log(resultat);
   }
-  resultat.value = parseInt(resultat);
+  total.value = resultat;
 };
+
+// function sommeTotal() {
+//   for(i = 0 ; i < inputPrix.length ; i++) {
+//     resultat += inputPrix[i].value; 
+//     resultat.value = parseInt(resultat);
+//   }
+  
+//   document.getElementsByClassName("resultat")[0] = resultat.value;
+// };
 
 // fonction Addition 
 // const array = [1, 2, 3, 4];
 // var sum = 0;
 
-// for (i = 0; i < array.length; i++) {
+// for (i = 0; i < inputPrix.length; i++) {
 //     sum += array[i];
 // }
 // console.log(sum);
@@ -113,7 +137,7 @@ function sommeTotal() {
 // var mul = 0;
 
 // for (i = 0; i < array.length ; i++) {
-//     mul *= array[i];
+//     mul *= quantite * prixUnit;
 // }
 // console.log(mul)
 
